@@ -4,7 +4,7 @@ package za.ac.cput.domain;
 * Author:       Ethan Swart
 * Student#:     220126283
 * Last Edited: 2022/08/10
-* */
+*/
 
 public class Parent extends User {
     
@@ -69,7 +69,7 @@ public class Parent extends User {
     }
 
     //Getters
-    public String getParetFullName() {
+    public String getParentFullName() {
         return parentFullName;
     }
 
