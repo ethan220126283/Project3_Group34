@@ -14,43 +14,11 @@ public class User {
     private String userEmailAddress;
     private String userPassword;
 
-    //Private Constructor with no fields, so that only the Builder Class can be used to construct the User Object
-    private User() {
+    //User constructor
+    public User() {
         
     }
 
-    public static class Builder {
-
-        //Attributes for builder class
-        private String userEmailAddress;
-        private String userPassword;
-
-        //Builder class constructor
-        public Builder() {
-
-        }
-
-        //Builder returns
-        //Email Address
-        public Builder theirUserEmailAddress(String userEmailAddress) {
-            this.userEmailAddress = userEmailAddress;
-            return this;
-        }
-
-        //Password
-        public Builder theirUserPassword(String userPassword) {
-            this.userPassword = userPassword;
-            return this;
-        }
-
-        //The build method that returns a user object
-        public User build() {
-            User user = new User();
-            user.userEmailAddress = this.userEmailAddress;
-            user.userPassword = this.userPassword;
-            return user;
-        }
-    }
 
     //Getters
     public String getUserEmailAddress() {
