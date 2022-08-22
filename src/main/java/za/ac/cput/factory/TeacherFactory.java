@@ -5,18 +5,18 @@ import za.ac.cput.util.Helper;
 
 public class TeacherFactory {
 
-    public static Teacher createTeacher(String teacherEmailAddress, String teacherPassword, String teacherName) {
+    public static Teacher createTeacher(String teacher_email, String teacher_password, String teacher_name) {
 
         //Validation
-        if (Helper.isNullorEmpty(teacherName) || Helper.isNullorEmpty(teacherName) ){
-            throw new IllegalArgumentException("teacherEmail and teacherName mandatory attributes.");
+        if (Helper.isNullorEmpty(teacher_email) || Helper.isNullorEmpty(teacher_name) ){
+            throw new IllegalArgumentException("teacher_email and teacher_name mandatory attributes.");
         }
 
         //Return
         return new Teacher.Builder()
-        .theirTeacherEmailAddress(teacherEmailAddress)
-        .theirTeacherPassword(teacherPassword)
-        .theirTeacherName(teacherName)
+        .theirTeacher_Email(teacher_email)
+        .theirTeacher_Password(teacher_password)
+        .theirTeacher_Name(teacher_name)
         .build();
     }
 
