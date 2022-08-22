@@ -6,13 +6,12 @@ package za.ac.cput.domain;
 * Last Edited: 2022/08/10
 */
 
-public class Teacher extends User{
+public class Teacher {
     
     //Attributes for Teacher Class
-    private String userEmailAddress;
-    private String userPassword;
-    private String teacherFullName;
-    private School teacherSchool;
+    private String teacherEmailAddress;
+    private String teacherPassword;
+    private String teacherName;
 
     private Teacher() {
 
@@ -20,10 +19,9 @@ public class Teacher extends User{
 
     public static class Builder {
         //Attributes for Builder Class
-        private String userEmailAddress;
-        private String userPassword;
-        private String teacherFullName;
-        private School teacherSchool;
+        private String teacherEmailAddress;
+        private String teacherPassword;
+        private String teacherName;
 
         //Builder Class Constructor
         public Builder() {
@@ -31,53 +29,43 @@ public class Teacher extends User{
         }
 
         //Builder Returns
-        public Builder theirUserEmailAddress(String userEmailAddress) {
-            this.userEmailAddress = userEmailAddress;
+        public Builder theirTeacherEmailAddress(String teacherEmailAddress) {
+            this.teacherEmailAddress = teacherEmailAddress;
             return this;
         }
 
-        public Builder theirUserPassword(String userPassword) {
-            this.userPassword = userPassword;
+        public Builder theirTeacherPassword(String teacherPassword) {
+            this.teacherPassword = teacherPassword;
             return this;
         }
 
-        public Builder theirTeacherFullName(String teacherFullName) {
-            this.teacherFullName = teacherFullName;
+        public Builder theirTeacherName(String teacherName) {
+            this.teacherName = teacherName;
             return this;
         }
 
-        public Builder theirTeacherSchool (School teacherSchool) {
-            this.teacherSchool = teacherSchool;
-            return this;
-        }
 
         //Build method
         public Teacher build() {
             Teacher teacher = new Teacher();
-            teacher.userEmailAddress = this.userEmailAddress;
-            teacher.userPassword = this.userPassword;
-            teacher.teacherFullName = this.teacherFullName;
-            teacher.teacherSchool = this.teacherSchool;
+            teacher.teacherEmailAddress = this.teacherEmailAddress;
+            teacher.teacherPassword = this.teacherPassword;
+            teacher.teacherName = this.teacherName;
             return teacher;
         }
     }
 
     //Getters
     public String getTeacherFullName() {
-        return teacherFullName;
-    }
-
-    public School getTeacherSchool() {
-        return teacherSchool;
+        return teacherName;
     }
 
     //toString method
     @Override
     public String toString() {
         return 
-        "Teacher: userEmailAddress=" + userEmailAddress + 
-        ", userPassword=" + userPassword +
-        ", teacherFullName=" + teacherFullName +
-        ", teacherSchool =" + teacherSchool.toString();
+        "Teacher: userEmailAddress=" + teacherEmailAddress + 
+        ", userPassword=" + teacherPassword +
+        ", teacherFullName=" + teacherName;
     }
 }
