@@ -3,81 +3,82 @@ package za.ac.cput.domain;
 /*
 * Author:       Ethan Swart
 * Student#:     220126283
-* Last Edited: 2022/08/10
+* Last Edited: 2022/08/22
 */
 
-public class Teacher extends User{
+import java.util.Objects;
+
+public class Teacher {
     
     //Attributes for Teacher Class
-    private String userEmailAddress;
-    private String userPassword;
-    private String teacherFullName;
-    private School teacherSchool;
+    private String teacher_email;
+    private String teacher_password;
+    private String teacher_name;
 
-    private Teacher() {
-
-    }
+    private Teacher() {}
 
     public static class Builder {
         //Attributes for Builder Class
-        private String userEmailAddress;
-        private String userPassword;
-        private String teacherFullName;
-        private School teacherSchool;
+        private String teacher_email;
+        private String teacher_password;
+        private String teacher_name;
 
         //Builder Class Constructor
-        public Builder() {
-
-        }
+        public Builder() {}
 
         //Builder Returns
-        public Builder theirUserEmailAddress(String userEmailAddress) {
-            this.userEmailAddress = userEmailAddress;
+        public Builder theirTeacher_Email(String teacher_email) {
+            this.teacher_email = teacher_email;
             return this;
         }
 
-        public Builder theirUserPassword(String userPassword) {
-            this.userPassword = userPassword;
+        public Builder theirTeacher_Password(String teacher_password) {
+            this.teacher_password = teacher_password;
             return this;
         }
 
-        public Builder theirTeacherFullName(String teacherFullName) {
-            this.teacherFullName = teacherFullName;
+        public Builder theirTeacher_Name(String teacher_name) {
+            this.teacher_name = teacher_name;
             return this;
         }
 
-        public Builder theirTeacherSchool (School teacherSchool) {
-            this.teacherSchool = teacherSchool;
-            return this;
-        }
 
         //Build method
         public Teacher build() {
             Teacher teacher = new Teacher();
-            teacher.userEmailAddress = this.userEmailAddress;
-            teacher.userPassword = this.userPassword;
-            teacher.teacherFullName = this.teacherFullName;
-            teacher.teacherSchool = this.teacherSchool;
+            teacher.teacher_email = this.teacher_email;
+            teacher.teacher_password = this.teacher_password;
+            teacher.teacher_name = this.teacher_name;
             return teacher;
         }
     }
 
     //Getters
-    public String getTeacherFullName() {
-        return teacherFullName;
-    }
-
-    public School getTeacherSchool() {
-        return teacherSchool;
+    public String getTeacher_Name() {
+        return teacher_name;
     }
 
     //toString method
     @Override
     public String toString() {
         return 
-        "Teacher: userEmailAddress=" + userEmailAddress + 
-        ", userPassword=" + userPassword +
-        ", teacherFullName=" + teacherFullName +
-        ", teacherSchool =" + teacherSchool.toString();
+        "Teacher: teacher_email=" + teacher_email +
+        ", teacher_password=" + teacher_password +
+        ", teacher_name=" + teacher_name;
+    }
+
+    //equals Method
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
+        return Objects.equals(teacher_email, teacher.teacher_email) && teacher_password.equals(teacher.teacher_password) && Objects.equals(teacher_name, teacher.teacher_name);
+    }
+
+    //hashCode Method
+    @Override
+    public int hashCode() {
+        return Objects.hash(teacher_email, teacher_password, teacher_name);
     }
 }
