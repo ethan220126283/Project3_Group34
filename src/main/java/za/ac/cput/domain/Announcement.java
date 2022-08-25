@@ -3,12 +3,9 @@ package za.ac.cput.domain;
 /*
  * Author:       Ethan Swart
  * Student#:     220126283
- * Last Edited: 2022/08/22
+ * Last Edited: 2022/08/25
  */
 
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
 
 public class Announcement {
