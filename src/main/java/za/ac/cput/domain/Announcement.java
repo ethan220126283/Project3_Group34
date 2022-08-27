@@ -6,6 +6,8 @@ package za.ac.cput.domain;
  * Announcement.java
  */
 
+import java.util.Objects;
+
 public class Announcement {
 
     private int classroom_id;
@@ -13,10 +15,12 @@ public class Announcement {
     private String announcement_date;
     private String announcement_content;
 
+    //Private constructor
     private Announcement() {}
 
     public static class Builder{
 
+        //Attributes for Builder
         private int classroom_id;
         private int announcement_id;
         private String announcement_date;
@@ -44,19 +48,51 @@ public class Announcement {
             return this;
         }
 
+        //Build method
         public Announcement build() {
             Announcement announcement = new Announcement();
             announcement.classroom_id = this.classroom_id;
             announcement.announcement_id = this.announcement_id;
             announcement.announcement_date = this.announcement_date;
             announcement.announcement_content = this.announcement_content;
+            announcement.announcement_content = announcement_content;
             return announcement;
         }
     }
 
+
+    //Getters
+    public int getClassroom_id() {return classroom_id;}
+
+    public int getAnnouncement_id() {return announcement_id;}
+
+    public String getAnnouncement_date() {return announcement_date;}
+
+    public String getAnnouncement_content() {return announcement_content;}
+
+    //toString method
     @Override
     public String toString() {
-        return "classroom_id = " + classroom_id + "announcement_id = " +
-                announcement_id + "announcement_date = " + announcement_date + "announcement_content = " + announcement_content;
+        return "Announcement{" +
+                "classroom_id=" + classroom_id +
+                ", announcement_id=" + announcement_id +
+                ", announcement_date=" + announcement_date +
+                ", announcement_content='" + announcement_content + '\'' +
+                '}';
+    }
+
+    //equals method
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Announcement that = (Announcement) o;
+        return classroom_id == that.classroom_id && announcement_id == that.announcement_id && Objects.equals(announcement_date, that.announcement_date) && Objects.equals(announcement_content, that.announcement_content);
+    }
+
+    //hashCode method
+    @Override
+    public int hashCode() {
+        return Objects.hash(classroom_id, announcement_id, announcement_date, announcement_content);
     }
 }
