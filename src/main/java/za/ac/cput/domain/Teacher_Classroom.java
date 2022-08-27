@@ -69,4 +69,9 @@ public class Teacher_Classroom {
     public int hashCode() {
         return Objects.hash(teacher_email, classroom_id);
     }
+
+    //Getters
+    public String getTeacher_email() {return teacher_email;}
+
+    public int getClassroom_id() {return classroom_id;}
 }
