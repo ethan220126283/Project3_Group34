@@ -1,4 +1,6 @@
 package za.ac.cput.factory;
+
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Classroom_Whitelist;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,6 +20,5 @@ class Classroom_WhitelistFactoryTest {
                 (classroom_whitelist.toString());
         assertNotNull
                 (classroom_whitelist);
-
     }
 }
