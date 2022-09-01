@@ -1,3 +1,5 @@
+/*https://www.color-hex.com/color-palette/1017579*/
+
 * {
     box-sizing: border-box;
 }
@@ -6,9 +8,14 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    background-color: #babbbd;
+}
+
 .login {
     display: block;
-    border: 4px solid dodgerblue;
+    border: 4px solid #627d9a;
+    background-color: #fffef7;
     padding: 20px;
     width: 50%;
     margin: auto;
@@ -19,11 +26,10 @@ html {
 .login img {
     width: 40%;
     border-radius: 50%;
-    border: 4px solid dodgerblue;
 }
 
 .login #login-button {
-    background-color: dodgerblue;
+    background-color: #627d9a;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
